@@ -1,0 +1,21 @@
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include "ClapTrap.hpp"
+#include <iostream>
+
+class ScavTrap : public ClapTrap {
+	public :
+		//Constructor:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap & src);
+		//Destructor:
+		~ScavTrap();
+		//Operator Overload:
+		ScavTrap &operator=(ScavTrap const & rhs);
+		//Methods:
+		void guardGate();
+};
+
+#endif
