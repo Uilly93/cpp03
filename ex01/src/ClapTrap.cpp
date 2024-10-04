@@ -74,10 +74,6 @@ void	ClapTrap::takeDamage(unsigned int amount){
 }
 
 void	ClapTrap::beRepaired(unsigned int amount){
-	if(amount == 0){
-		std::cout << RED << "nothing to repaire !" << RESET << std::endl;
-		return ;
-	}
 	if(_EnergyPoint > 0 && _HitPoint > 0){
 		std::cout << GREEN << _name << " repaired itself for " << amount << " Health points" <<RESET << std::endl;
 		_EnergyPoint--;

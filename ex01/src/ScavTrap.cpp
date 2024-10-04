@@ -36,5 +36,9 @@ ScavTrap &ScavTrap::operator=(ScavTrap const & rhs){
 }
 //Methods:
 void ScavTrap::guardGate(){
-	std::cout << NYELLOW << _name << " Lance Rempart 🛡️" << RESET << std::endl;
+	if(_HitPoint > 0){
+		std::cout << NYELLOW << _name << " use Rempart 🛡️" << RESET << std::endl;
+	}
+	else 
+		std::cout << RED << _name << " can't use Rempart 🛡️, he is dead" << RESET << std::endl;
 }
