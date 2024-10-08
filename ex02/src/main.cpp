@@ -1,10 +1,14 @@
+#include "../includes/FragTrap.hpp"
 #include "../includes/ScavTrap.hpp"
 #include "../includes/ClapTrap.hpp"
 
 
 int main() {
-std::cout << NGREEN << "------------Constructors Calling-----------" << RESET << std::endl;
+	std::cout << NGREEN << "------------Constructors Calling-----------" << RESET << std::endl;
 	ClapTrap Clap("Iop");
+	FragTrap CpyFrag;
+	CpyFrag = FragTrap("Sram");
+	FragTrap Frag = CpyFrag;
 	ScavTrap Scav("Feca");
 	std::cout << NGREEN << "------------ClapTrap tests-----------" << RESET << std::endl;
 	Clap.print_infos();
@@ -35,5 +39,20 @@ std::cout << NGREEN << "------------Constructors Calling-----------" << RESET <<
 	Scav.guardGate();
 	Scav.attack("Eniripsa");
 	Scav.beRepaired(999);
+	std::cout << NGREEN << "------------FragTrap tests-----------" << RESET << std::endl;
+	Frag.print_infos();
+	Frag.attack("Osamodas");
+	Frag.takeDamage(99);
+	Frag.print_infos();
+	Frag.beRepaired(99);
+	Frag.highFivesGuys();
+	// Frag.guardGate();
+	Frag.takeDamage(100);
+	Frag.print_infos();
+	Frag.highFivesGuys();
+	Frag.takeDamage(1);
+	Frag.beRepaired(10);
+	Frag.attack("Osamodas");
+	std::cout << NGREEN << "------------Destructors Calling-----------" << RESET << std::endl;
 	return 0;
 }
