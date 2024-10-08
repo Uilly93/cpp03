@@ -35,6 +35,20 @@ ScavTrap &ScavTrap::operator=(ScavTrap const & rhs){
 	return *this;
 }
 //Methods:
+
+void	ScavTrap::attack(const std::string& target){
+	if(_EnergyPoint > 0 && _HitPoint > 0){
+		std::cout << YELLOW << "ScavTrap " << _name;
+		std::cout << " Attack " << target << ", Causing ";
+		std::cout << _AttackDamage << " points of damages !" << RESET << std::endl;
+		_EnergyPoint--;
+	}
+	else if (_EnergyPoint <= 0)
+		std::cout << RED << _name << " has not enough Energy Points !" << RESET << std::endl;
+	else if(_HitPoint <= 0)
+		std::cout << RED << _name << " is dead, he can't attack" << RESET << std::endl;
+}
+
 void ScavTrap::guardGate(){
 	if(_HitPoint > 0){
 		std::cout << NYELLOW << _name << " use Rempart 🛡️" << RESET << std::endl;
