@@ -85,6 +85,11 @@ void	ClapTrap::beRepaired(unsigned int amount){
 		std::cout << RED << _name << " has not enough Energy Points !" << RESET << std::endl;
 }
 
+std::string	ClapTrap::getName() const {
+	return _name;
+}
+
+
 void	ClapTrap::print_infos() const {
 	std::cout << NBLUE << "Hit Points remaining: " << _HitPoint << RESET << std::endl;
 	std::cout << NBLUE << "Energy Points remaining: " << _EnergyPoint << RESET << std::endl;

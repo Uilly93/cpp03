@@ -37,22 +37,13 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const & rhs){
 //Methods:
 
 void	DiamondTrap::attack(const std::string& target){
-	if(_EnergyPoint > 0 && _HitPoint > 0){
-		std::cout << YELLOW << "DiamondTrap " << _name;
-		std::cout << " Attack " << target << ", Causing ";
-		std::cout << _AttackDamage << " points of damages !" << RESET << std::endl;
-		_EnergyPoint--;
-	}
-	else if (_EnergyPoint <= 0)
-		std::cout << RED << _name << " has not enough Energy Points !" << RESET << std::endl;
-	else if(_HitPoint <= 0)
-		std::cout << RED << _name << " is dead, he can't attack" << RESET << std::endl;
+	ScavTrap::attack(target);
 }
 
-// void DiamondTrap::highFivesGuys(){
-// 	if(_HitPoint > 0){
-// 		std::cout << NYELLOW << _name << " Wants to High Five 🙏 " << RESET << std::endl;
-// 	}
-// 	else 
-// 		std::cout << RED << _name << " can't High Five, he is dead" << RESET << std::endl;
-// }
+void DiamondTrap::whoAmI(){
+	if(_HitPoint > 0){
+		std::cout << NYELLOW << "Hi, my name is, what? My name is, who? My name is, chka-chka, " << _name << " and " << getName() << RESET << std::endl;
+	}
+	else 
+		std::cout << RED << _name << " can't say his name, he is dead" << RESET << std::endl;
+}

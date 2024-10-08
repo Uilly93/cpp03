@@ -20,6 +20,7 @@ class ClapTrap{
 		void	set_damages(unsigned int amount);
 		int		get_damages() const ;
 		void	print_infos() const ;
+		std::string	getName() const ;
 
 	protected:
 		std::string _name;
